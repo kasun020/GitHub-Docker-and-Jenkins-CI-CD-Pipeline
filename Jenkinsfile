@@ -1,5 +1,5 @@
 pipeline {
-    agent any 
+    agent any  // Run this pipeline on any available agent ex:- windows, linux, mac
     
     stages { 
         stage('SCM Checkout') {
@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {  
-                bat 'docker build -t adomicarts/nodeapp-cuban:%BUILD_NUMBER% .'
+                bat 'docker build -t kasun020/pipeline-tutorial-cuban:%BUILD_NUMBER% .'
             }
         }
         stage('Login to Docker Hub') {
